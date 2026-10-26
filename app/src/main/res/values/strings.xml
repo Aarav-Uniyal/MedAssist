@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">MedAssist</string>
+
+    <!-- Bottom navigation labels (short, so they fit on small screens) -->
+    <string name="nav_home">Home</string>
+    <string name="nav_assistant">Assistant</string>
+    <string name="nav_vault">Vault</string>
+    <string name="nav_analyzer">Analyzer</string>
+    <string name="nav_steps">Steps</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Screen titles (full names) -->
+    <string name="title_assistant">AI Assistant</string>
+    <string name="title_vault">Medical Vault</string>
+    <string name="title_steps">Step Tracker</string>
+    <string name="title_profile">Profile and Settings</string>
+    <string name="title_analyzer">Report Analyzer</string>
+
+    <string name="action_back">Back</string>
+
+    <!-- Home -->
+    <string name="greeting_morning">Good morning</string>
+    <string name="greeting_afternoon">Good afternoon</string>
+    <string name="greeting_evening">Good evening</string>
+    <string name="greeting_night">Hello</string>
+    <string name="home_subtitle">How can we help you today?</string>
+    <string name="home_quick_access">Quick access</string>
+    <string name="home_card_assistant_title">AI Assistant</string>
+    <string name="home_card_assistant_desc">Ask general health questions</string>
+    <string name="home_card_vault_title">Medical Vault</string>
+    <string name="home_card_vault_desc">Keep your reports in one place</string>
+    <string name="home_card_analyzer_title">Report Analyzer</string>
+    <string name="home_card_analyzer_desc">Get a plain-language explanation of a report</string>
+    <string name="home_card_profile_title">Profile</string>
+    <string name="home_card_profile_desc">View your account details</string>
+    <string name="home_disclaimer">MedAssist gives general health information. It does not replace advice from a doctor.</string>
+
+    <!-- Shared states -->
+    <string name="common_loading">Loading…</string>
+    <string name="common_retry">Try again</string>
+    <string name="common_error_title">Something went wrong</string>
+    <string name="common_error_generic">We couldn’t complete that. Check your connection and try again.</string>
+    <string name="common_offline_banner">You’re offline. Some features need an internet connection.</string>
+
+    <!-- Shown on screens whose feature is built in a later phase -->
+    <string name="section_pending_title">Coming soon</string>
+    <string name="section_pending_body">This section is not available in this build yet.</string>
+
+    <!-- Phase 2: greeting with a name -->
+    <string name="greeting_named">%1$s, %2$s</string>
+
+    <!-- Sign in / register / reset / verify: shared -->
+    <string name="field_name">Full name</string>
+    <string name="field_email">Email</string>
+    <string name="field_password">Password</string>
+    <string name="field_confirm_password">Confirm password</string>
+    <string name="action_show">Show</string>
+    <string name="action_hide">Hide</string>
+    <string name="password_show_description">Show password</string>
+    <string name="password_hide_description">Hide password</string>
+    <string name="action_cancel">Cancel</string>
+
+    <!-- Login -->
+    <string name="login_title">Welcome back</string>
+    <string name="login_subtitle">Sign in to your MedAssist account.</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_forgot_password">Forgot password?</string>
+    <string name="login_no_account">New to MedAssist?</string>
+    <string name="action_register">Create account</string>
+
+    <!-- Register -->
+    <string name="register_title">Create your account</string>
+    <string name="register_subtitle">Your documents and health data stay linked only to your account.</string>
+    <string name="register_password_hint">Use at least 8 characters, with letters and numbers.</string>
+    <string name="register_have_account">Already have an account?</string>
+
+    <!-- Forgot password -->
+    <string name="forgot_title">Reset your password</string>
+    <string name="forgot_subtitle">Enter your email and we’ll send you a link to reset your password.</string>
+    <string name="action_send_reset_link">Send reset link</string>
+    <string name="action_back_to_sign_in">Back to sign in</string>
+    <string name="action_use_different_email">Use a different email</string>
+    <string name="forgot_sent_title">Check your email</string>
+    <string name="forgot_sent_body">If an account exists for %1$s, we’ve sent a password reset link.</string>
+    <string name="forgot_sent_banner">It can take a few minutes to arrive. Check your spam folder too.</string>
+
+    <!-- Verify email -->
+    <string name="verify_title">Verify your email</string>
+    <string name="verify_body">We sent a verification link to %1$s. Open it, then come back here and tap the button below. If you can’t find it, check your spam folder.</string>
+    <string name="action_verify_done">I’ve verified my email</string>
+    <string name="verify_not_yet">Your email isn’t verified yet. Open the link in the email, then try again.</string>
+    <string name="action_resend">Resend email</string>
+    <string name="verify_resent">Verification email sent.</string>
+    <string name="verify_resend_wait">Resend in %1$d s</string>
+    <string name="action_use_other_account">Use a different account</string>
+
+    <!-- Form validation -->
+    <string name="error_name_empty">Please enter your name.</string>
+    <string name="error_name_too_long">Name must be 60 characters or fewer.</string>
+    <string name="error_email_empty">Please enter your email.</string>
+    <string name="error_email_invalid">Enter a valid email address.</string>
+    <string name="error_password_empty">Please enter your password.</string>
+    <string name="error_password_short">Password must be at least 8 characters.</string>
+    <string name="error_password_weak">Password needs both letters and numbers.</string>
+    <string name="error_confirm_empty">Please enter your password again.</string>
+    <string name="error_passwords_mismatch">The passwords don’t match.</string>
+
+    <!-- Sign-in service errors -->
+    <string name="auth_error_invalid_credentials">Incorrect email or password.</string>
+    <string name="auth_error_email_in_use">An account with this email already exists. Try signing in instead.</string>
+    <string name="auth_error_weak_password">That password isn’t strong enough. Use at least 8 characters with letters and numbers.</string>
+    <string name="auth_error_network">No internet connection. Check your connection and try again.</string>
+    <string name="auth_error_too_many">Too many attempts. Please wait a few minutes and try again.</string>
+    <string name="auth_error_disabled">This account has been disabled. Please contact support.</string>
+    <string name="auth_error_session_expired">Your session has expired. Please sign in again.</string>
+    <string name="auth_error_unknown">Something went wrong. Please try again.</string>
+
+    <!-- Profile -->
+    <string name="profile_account_section">Account</string>
+    <string name="profile_name_label">Name</string>
+    <string name="profile_name_unset">Not set</string>
+    <string name="profile_email_label">Email</string>
+    <string name="profile_email_status_verified">Email verified</string>
+    <string name="action_sign_out">Sign out</string>
+    <string name="profile_danger_section">Delete account</string>
+    <string name="profile_delete_explainer">Permanently remove your account, your saved profile and every document in your Medical Vault. This can’t be undone.</string>
+    <string name="action_delete_account">Delete my account</string>
+    <string name="delete_title">Delete your account?</string>
+    <string name="delete_body">This permanently deletes your account, your saved profile and all your uploaded documents. It can’t be undone. Enter your password to confirm.</string>
+    <string name="delete_confirm">Delete permanently</string>
+    <string name="delete_error_wrong_password">That password is incorrect.</string>
+    <!-- Medical Vault (Phase 3) -->
+    <string name="vault_action_upload">Upload PDF</string>
+    <string name="vault_limit_note">PDF files only, up to %1$d MB each. Stored privately in your account.</string>
+    <string name="vault_search_label">Search documents</string>
+    <string name="vault_filter_all">All</string>
+    <string name="vault_filter_label">Filter by category</string>
+    <string name="vault_sort_label">Sort by %1$s</string>
+    <string name="vault_sort_menu">Change sort order</string>
+    <string name="vault_sort_newest">Newest first</string>
+    <string name="vault_sort_oldest">Oldest first</string>
+    <string name="vault_sort_name">Name (A–Z)</string>
+    <string name="vault_sort_largest">Largest first</string>
+    <string name="vault_empty_title">No documents yet</string>
+    <string name="vault_empty_body">Upload a PDF of a report or prescription to keep it safe and read it any time.</string>
+    <string name="vault_category_empty_title">No documents uploaded for this category</string>
+    <string name="vault_category_empty_body">Upload a PDF and assign it to this category to see it here.</string>
+    <string name="vault_no_results_title">No matching documents</string>
+    <string name="vault_no_results_body">Try a different search word or category.</string>
+    <string name="vault_action_clear_filters">Clear search and filters</string>
+    <string name="vault_document_count">%1$d of %2$d documents</string>
+    <string name="vault_doc_meta">%1$s · %2$s</string>
+    <string name="vault_doc_actions">More options for %1$s</string>
+    <string name="vault_action_open">Open</string>
+    <string name="vault_action_edit">Rename or edit</string>
+    <string name="vault_action_delete">Delete</string>
+    <string name="vault_reading_file">Checking the file…</string>
+    <string name="vault_upload_title">Upload document</string>
+    <string name="vault_upload_file_size">File size: %1$s</string>
+    <string name="field_document_name">Document name</string>
+    <string name="field_category">Category</string>
+    <string name="field_notes">Notes (optional)</string>
+    <string name="vault_notes_counter">%1$d / %2$d</string>
+    <string name="vault_action_start_upload">Upload</string>
+    <string name="vault_action_retry_upload">Retry upload</string>
+    <string name="vault_uploading">Uploading… %1$d%%</string>
+    <string name="vault_upload_done">Document uploaded.</string>
+    <string name="vault_edit_title">Edit document</string>
+    <string name="action_save">Save</string>
+    <string name="vault_saved">Changes saved.</string>
+    <string name="vault_delete_title">Delete this document?</string>
+    <string name="vault_delete_body">“%1$s” will be permanently deleted. This can’t be undone.</string>
+    <string name="vault_delete_confirm">Delete</string>
+    <string name="vault_deleted">Document deleted.</string>
+    <string name="category_blood_tests">Blood Tests</string>
+    <string name="category_prescriptions">Prescriptions</string>
+    <string name="category_diagnostic_reports">Diagnostic Reports</string>
+    <string name="category_imaging_reports">Imaging Reports</string>
+    <string name="category_medical_history">Medical History</string>
+    <string name="category_other">Other</string>
+    <string name="vault_error_network">Couldn’t reach the server. Check your internet connection and try again.</string>
+    <string name="vault_error_offline">You’re offline. Connect to the internet and try again.</string>
+    <string name="vault_error_permission">You don’t have permission to do that. Try signing out and in again.</string>
+    <string name="vault_error_not_found">This document no longer exists.</string>
+    <string name="vault_error_quota">The app’s free daily limit has been reached. Please try again tomorrow.</string>
+    <string name="vault_error_empty_file">This file is empty.</string>
+    <string name="vault_error_too_large">This file is too large. The limit is 10 MB.</string>
+    <string name="vault_error_not_pdf">Only PDF files can be uploaded.</string>
+    <string name="vault_error_password_protected">This PDF is password-protected. Remove the password and try again.</string>
+    <string name="vault_error_corrupted">This PDF is damaged and can’t be opened.</string>
+    <string name="vault_error_unreadable">Couldn’t read the selected file. Try picking it again.</string>
+    <string name="vault_error_device_full">Your phone is out of storage space. Free some space and try again.</string>
+    <string name="vault_error_doc_name_empty">Please enter a document name.</string>
+    <string name="vault_error_doc_name_too_long">Name must be 100 characters or fewer.</string>
+    <string name="vault_error_notes_too_long">Notes must be 500 characters or fewer.</string>
+
+    <!-- PDF viewer -->
+    <string name="viewer_loading">Opening document…</string>
+    <string name="viewer_page_indicator">Page %1$d of %2$d</string>
+    <string name="viewer_page_description">Page %1$d of %2$d</string>
+    <string name="viewer_previous_page">Previous page</string>
+    <string name="viewer_next_page">Next page</string>
+    <string name="viewer_zoom_in">Zoom in</string>
+    <string name="viewer_zoom_out">Zoom out</string>
+    <string name="viewer_zoom_level">Zoom %1$d%%</string>
+
+    <!-- Home: recent documents -->
+    <string name="home_recent_documents">Recent documents</string>
+    <string name="home_recent_empty">No documents yet. Upload your first one in the Vault.</string>
+    <string name="home_see_all">See all</string>
+    <string name="home_recent_error">Couldn’t load your documents.</string>
+    <!-- Phase 4: AI Assistant -->
+    <string name="chat_disclaimer">General health information only. Not a diagnosis or medical advice. In an emergency, call 112.</string>
+    <string name="chat_menu">Chat options</string>
+    <string name="chat_new_conversation">New conversation</string>
+    <string name="chat_save_history">Save chat history</string>
+    <string name="chat_save_history_desc">Keeps chats on this phone only. Off by default.</string>
+    <string name="chat_new_title">Start a new conversation?</string>
+    <string name="chat_new_body">This chat will be cleared.</string>
+    <string name="chat_new_body_saved">This chat will be cleared and its saved copy deleted from this phone.</string>
+    <string name="chat_new_confirm">Clear chat</string>
+    <string name="chat_cancel">Cancel</string>
+    <string name="chat_emergency_title">Is this an emergency?</string>
+    <string name="chat_emergency_body">If someone is in danger, call 112 now or go to the nearest emergency department. For thoughts of suicide you can call Tele-MANAS on 14416 (free, 24 hours).</string>
+    <string name="chat_call_emergency">Call 112</string>
+    <string name="chat_dismiss">Dismiss</string>
+    <string name="chat_welcome_title">Ask a health question</string>
+    <string name="chat_welcome_body">I can explain medical terms and reports, share wellness tips and help you prepare for a doctor’s visit. Please don’t share personal details such as your name, address or ID numbers.</string>
+    <string name="chat_suggestion_1">What does HbA1c mean on a blood test?</string>
+    <string name="chat_suggestion_2">How can I prepare for a doctor’s appointment?</string>
+    <string name="chat_suggestion_3">Tips for sleeping better</string>
+    <string name="chat_input_label">Type your question</string>
+    <string name="chat_send">Send</string>
+    <string name="chat_speech_to_text">Speak your question</string>
+    <string name="chat_speech_prompt">Speak your question</string>
+    <string name="chat_speech_unavailable">Speech recognition is not available on this device.</string>
+    <string name="chat_speech_permission_denied">Microphone permission is needed for speech input.</string>
+    <string name="chat_typing">MedAssist is writing a reply…</string>
+    <string name="chat_you_said">You said: %1$s. %2$s</string>
+    <string name="chat_assistant_said">MedAssist replied: %1$s. %2$s</string>
+    <string name="chat_not_sent">Not sent · %1$s</string>
+    <string name="chat_retry">Retry</string>
+    <string name="chat_char_count">%1$d/%2$d</string>
+    <string name="chat_error_too_long">Please keep your question under %1$d characters.</string>
+    <string name="chat_error_offline">You’re offline. Connect to the internet and try again.</string>
+    <string name="chat_error_rate_limited">You’re sending questions very quickly. Please wait a minute and try again.</string>
+    <string name="chat_error_network">Couldn’t reach the AI service. Check your connection and tap Retry.</string>
+    <string name="chat_error_timeout">The reply took too long. Tap Retry.</string>
+    <string name="chat_error_quota">The free daily AI limit has been reached. Please try again later.</string>
+    <string name="chat_error_blocked">I can’t answer that question. Try asking it in a different way.</string>
+    <string name="chat_error_not_set_up">The AI Assistant isn’t set up yet. Enable Firebase AI Logic in the Firebase console (see README).</string>
+    <string name="chat_error_app_check">This copy of the app isn’t verified by App Check yet. Register the debug token in the Firebase console (see README).</string>
+    <string name="chat_error_region">The AI service isn’t available in your region.</string>
+    <string name="chat_error_server">The AI service had a problem. Please tap Retry.</string>
+    <string name="chat_error_empty">No reply came back. Please tap Retry.</string>
+    <string name="chat_error_unknown">Something went wrong. Please tap Retry.</string>
+
+    <!-- Phase 5: Report Analyzer -->
+    <string name="analyzer_intro_title">Understand your medical report</string>
+    <string name="analyzer_intro_body">Choose a PDF already in your Medical Vault. MedAssist extracts selectable text on this device. After you review a consent notice, that text is sent to Google’s Gemini service for an educational explanation. Scanned image-only PDFs are not supported yet.</string>
+    <string name="analyzer_choose_report">Choose a report from your Vault</string>
+    <string name="analyzer_loading_documents">Loading your Medical Vault documents…</string>
+    <string name="analyzer_no_documents_title">No PDFs in your Vault</string>
+    <string name="analyzer_no_documents_body">Upload a report PDF to the Medical Vault first. You can return here to request an explanation.</string>
+    <string name="analyzer_open_vault">Open Medical Vault</string>
+    <string name="analyzer_action_analyze">Analyze report</string>
+    <string name="analyzer_consent_title">Send this report for AI analysis?</string>
+    <string name="analyzer_consent_document">Selected document: %1$s</string>
+    <string name="analyzer_consent_body">MedAssist will extract readable text on this device and send that text to Google’s Gemini service through Firebase AI Logic. The PDF itself is not sent as a file.</string>
+    <string name="analyzer_consent_privacy">Continue only if you agree to share this report text for processing. AI output can be wrong. MedAssist does not automatically save analysis results or extracted text.</string>
+    <string name="analyzer_consent_confirm">Continue and analyze</string>
+    <string name="analyzer_progress_title">Analyzing report</string>
+    <string name="analyzer_stage_downloading">Retrieving your private PDF from the Vault…</string>
+    <string name="analyzer_stage_extracting">Reading selectable text on this device…</string>
+    <string name="analyzer_stage_analyzing">Preparing an AI explanation…</string>
+    <string name="analyzer_error_offline">Report analysis needs an internet connection. Connect and try again.</string>
+    <string name="analyzer_error_scanned">No readable text was found. This may be a scanned or image-only PDF; OCR is not included in this free-plan phase.</string>
+    <string name="analyzer_error_pdf_locked">This PDF is password-protected and could not be read. Use an unprotected copy and upload it to your Vault.</string>
+    <string name="analyzer_error_pdf_unreadable">The PDF text could not be read. Check that the file opens in the Vault, or upload another copy.</string>
+    <string name="analyzer_result_title">Report explanation</string>
+    <string name="analyzer_result_ai_label">This is an AI-generated explanation. The values listed below are also identified by AI; compare them with the original PDF and extracted text.</string>
+    <string name="analyzer_result_for">Report: %1$s</string>
+    <string name="analyzer_open_original">Open original PDF</string>
+    <string name="analyzer_text_truncated">Only part of this long PDF was sent for analysis to keep processing bounded. Check the complete original report too.</string>
+    <string name="analyzer_section_overview">Report overview</string>
+    <string name="analyzer_section_findings">Important findings</string>
+    <string name="analyzer_section_terms">Medical terms explained</string>
+    <string name="analyzer_section_values">Values and ranges mentioned in the report</string>
+    <string name="analyzer_section_questions">Questions to ask your healthcare professional</string>
+    <string name="analyzer_section_limitations">Limitations and uncertainty</string>
+    <string name="analyzer_section_not_available">The AI did not return information for this section. Check the original report.</string>
+    <string name="analyzer_no_values">No test values could be reliably listed from the returned explanation. Use the original report as the source of truth.</string>
+    <string name="analyzer_test_unknown">Test name not identified</string>
+    <string name="analyzer_test_value">Value: %1$s</string>
+    <string name="analyzer_reference_range">Reference range shown: %1$s</string>
+    <string name="analyzer_report_flag">Flag shown in source text: %1$s</string>
+    <string name="analyzer_source_title">Text extracted from the original PDF</string>
+    <string name="analyzer_source_show">Show extracted text</string>
+    <string name="analyzer_source_hide">Hide extracted text</string>
+    <string name="analyzer_disclaimer_title">Important medical notice</string>
+    <string name="analyzer_disclaimer_body">AI-generated explanation for informational purposes only. This is not a medical diagnosis and must not replace professional medical advice. Verify all values and ranges against the original report and discuss results with a qualified healthcare professional. Do not change medicines based on this explanation.</string>
+
+
+    <!-- Phase 7: accessibility, app language and appearance -->
+    <string name="settings_accessibility_title">Appearance &amp; accessibility</string>
+    <string name="settings_dark_mode_title">Dark mode</string>
+    <string name="settings_dark_mode_summary">Use a dark theme across MedAssist. The in-app PDF reader stays light.</string>
+    <string name="settings_language_title">App language</string>
+    <string name="settings_language_summary">Choose English or Hindi for the interface and AI replies.</string>
+    <string name="settings_language_english">English</string>
+    <string name="settings_language_hindi">हिन्दी</string>
+    <string name="settings_narration_title">Voice narration</string>
+    <string name="settings_narration_summary">Use your device’s Text-to-Speech voice. Available voices depend on your phone.</string>
+    <string name="settings_narration_enabled">Enable narration and spoken alerts</string>
+    <string name="settings_auto_narration">Read screen introductions automatically</string>
+    <string name="settings_narration_speed">Speech speed: %1$.1f×</string>
+    <string name="settings_narration_volume">Speech volume: %1$d%%</string>
+    <string name="settings_narration_play">Play sample</string>
+    <string name="settings_narration_pause">Pause</string>
+    <string name="settings_narration_resume">Resume</string>
+    <string name="settings_narration_stop">Stop</string>
+    <string name="a11y_listen_to_screen">Listen to this screen</string>
+    <string name="a11y_voice_unavailable">The selected Text-to-Speech voice is not available. Install or select an English or Hindi voice in your Android Text-to-Speech settings.</string>
+    <string name="a11y_speech_home">Home. Quick access lets you open the AI Assistant, Medical Vault, Report Analyzer and Profile. Recent documents appear below.</string>
+    <string name="a11y_speech_vault">Medical Vault. Search, sort, upload and manage your private PDF documents. Select a document to open it.</string>
+    <string name="a11y_speech_assistant">AI Assistant. Ask general health questions in English or Hindi. This service gives general information, not diagnosis or treatment. Do not share personal identifiers.</string>
+    <string name="a11y_speech_analyzer">Report Analyzer. Choose a PDF from your Medical Vault, review the consent message, and request an educational explanation. Verify all values against the original report.</string>
+    <string name="a11y_speech_profile">Profile and Settings. Review your account, choose English or Hindi, enable dark mode, and configure voice narration. You can also sign out or delete your account.</string>
+    <string name="a11y_speech_document">PDF reader. Use Previous page and Next page to move through the document, and Zoom in or Zoom out to change its size.</string>
+
+    <string name="a11y_narration_playing">Voice narration is playing</string>
+    <string name="a11y_narration_paused">Voice narration is paused</string>
+
+</resources>

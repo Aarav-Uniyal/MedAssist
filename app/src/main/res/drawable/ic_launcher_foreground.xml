@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- A plain medical cross, kept inside the 66dp adaptive-icon safe zone -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M50,36h8v14h14v8h-14v14h-8v-14h-14v-8h14z" />
+</vector>

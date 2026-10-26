@@ -1,0 +1,129 @@
+rules_version = '2';
+
+// Firestore security rules (Phase 3: user profile + Medical Vault).
+// Deploy with:  firebase deploy --only firestore:rules
+// Test with:    cd firestore-tests && npm test   (runs against the free local emulator)
+//
+// Principle: a signed-in user can touch only documents under users/{their own uid}.
+// Everything else is denied by default (Firestore denies anything no rule allows).
+//
+// The Medical Vault keeps PDFs in Firestore, not Cloud Storage, so the project works on the free
+// Spark plan. The limits below must match VaultConfig.kt:
+//   10 MB per PDF (10485760 bytes), pieces of at most 900 KiB (921600 bytes), so at most 12 pieces.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    // The profile document: users/{uid}
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+
+      // The app creates this once, with exactly these fields and sane values.
+      allow create: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(
+             ['displayName', 'email', 'preferredLanguage', 'narrationEnabled', 'dailyStepGoal', 'createdAt'])
+        && request.resource.data.keys().hasAll(
+             ['displayName', 'email', 'preferredLanguage', 'narrationEnabled', 'dailyStepGoal', 'createdAt'])
+        && request.resource.data.displayName is string
+        && request.resource.data.displayName.size() <= 100
+        && request.resource.data.email is string
+        && request.resource.data.email.size() <= 320
+        && request.resource.data.preferredLanguage in ['en', 'hi']
+        && request.resource.data.narrationEnabled is bool
+        && request.resource.data.dailyStepGoal is int
+        && request.resource.data.dailyStepGoal >= 1000
+        && request.resource.data.dailyStepGoal <= 100000
+        && request.resource.data.createdAt == request.time;
+
+      // Later phases let the user change these settings. Email and createdAt can never change.
+      allow update: if isOwner(uid)
+        && request.resource.data.diff(resource.data).affectedKeys()
+             .hasOnly(['displayName', 'preferredLanguage', 'narrationEnabled', 'dailyStepGoal'])
+        && request.resource.data.displayName is string
+        && request.resource.data.displayName.size() <= 100
+        && request.resource.data.preferredLanguage in ['en', 'hi']
+        && request.resource.data.narrationEnabled is bool
+        && request.resource.data.dailyStepGoal is int
+        && request.resource.data.dailyStepGoal >= 1000
+        && request.resource.data.dailyStepGoal <= 100000;
+
+      // "Delete account" (done by the app, after it has deleted the user's documents).
+      allow delete: if isOwner(uid);
+
+      // ---- Medical Vault: metadata. users/{uid}/documents/{documentId} ----
+      match /documents/{documentId} {
+        allow read, delete: if isOwner(uid);
+
+        // Created once, after every piece of the PDF has been written.
+        allow create: if isOwner(uid)
+          && request.resource.data.keys().hasOnly(
+               ['ownerId', 'name', 'category', 'notes', 'sizeBytes', 'mimeType',
+                'chunkCount', 'sha256', 'storagePath', 'uploadedAt'])
+          && request.resource.data.keys().hasAll(
+               ['ownerId', 'name', 'category', 'notes', 'sizeBytes', 'mimeType',
+                'chunkCount', 'sha256', 'storagePath', 'uploadedAt'])
+          && request.resource.data.ownerId == uid
+          && validDetails(request.resource.data)
+          && request.resource.data.mimeType == 'application/pdf'
+          && request.resource.data.sizeBytes is int
+          && request.resource.data.sizeBytes > 0
+          && request.resource.data.sizeBytes <= 10485760
+          && request.resource.data.chunkCount is int
+          && request.resource.data.chunkCount >= 1
+          && request.resource.data.chunkCount <= 12
+          // chunkCount must be exactly ceil(sizeBytes / 921600).
+          && (request.resource.data.chunkCount - 1) * 921600 < request.resource.data.sizeBytes
+          && request.resource.data.sizeBytes <= request.resource.data.chunkCount * 921600
+          && request.resource.data.sha256 is string
+          && request.resource.data.sha256.matches('^[0-9a-f]{64}$')
+          && request.resource.data.storagePath == 'users/' + uid + '/documentChunks'
+          && request.resource.data.uploadedAt == request.time
+          // The first and last pieces must already exist, so a half-uploaded file never shows up.
+          && exists(/databases/$(database)/documents/users/$(uid)/documentChunks/$(documentId + '_0'))
+          && exists(/databases/$(database)/documents/users/$(uid)/documentChunks/$(documentId + '_' + string(request.resource.data.chunkCount - 1)));
+
+        // Rename, change category, edit notes. Nothing else may change.
+        allow update: if isOwner(uid)
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'category', 'notes'])
+          && validDetails(request.resource.data);
+      }
+
+      // ---- Medical Vault: file pieces. users/{uid}/documentChunks/{documentId}_{index} ----
+      match /documentChunks/{chunkId} {
+        allow read, delete: if isOwner(uid);
+
+        // Pieces can be written (or rewritten on retry) only while the upload is unfinished.
+        // Once the metadata exists the file is sealed: no one can swap its contents.
+        allow create, update: if isOwner(uid)
+          && request.resource.data.keys().hasOnly(['documentId', 'index', 'data'])
+          && request.resource.data.keys().hasAll(['documentId', 'index', 'data'])
+          && request.resource.data.documentId is string
+          && request.resource.data.documentId.matches('^[A-Za-z0-9]{1,40}$')
+          && request.resource.data.index is int
+          && request.resource.data.index >= 0
+          && request.resource.data.index < 12
+          && chunkId == request.resource.data.documentId + '_' + string(request.resource.data.index)
+          && request.resource.data.data is bytes
+          && request.resource.data.data.size() > 0
+          && request.resource.data.data.size() <= 921600
+          && !exists(/databases/$(database)/documents/users/$(uid)/documents/$(request.resource.data.documentId));
+      }
+    }
+
+    function validDetails(data) {
+      return data.name is string
+        && data.name.size() >= 1
+        && data.name.size() <= 100
+        && data.category in ['blood_tests', 'prescriptions', 'diagnostic_reports',
+                             'imaging_reports', 'medical_history', 'other']
+        && data.notes is string
+        && data.notes.size() <= 500;
+    }
+
+    // Later phases add rules for their own collections (stepSummaries, analysisHistory, ...).
+    // Until then they are denied like everything else.
+  }
+}

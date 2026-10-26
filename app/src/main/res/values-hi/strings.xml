@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Bottom navigation labels -->
+    <string name="nav_home">होम</string>
+    <string name="nav_assistant">सहायक</string>
+    <string name="nav_vault">वॉल्ट</string>
+    <string name="nav_analyzer">विश्लेषक</string>
+    <string name="nav_steps">कदम</string>
+    <string name="nav_profile">प्रोफ़ाइल</string>
+
+    <!-- Screen titles -->
+    <string name="title_assistant">एआई सहायक</string>
+    <string name="title_vault">मेडिकल वॉल्ट</string>
+    <string name="title_steps">स्टेप ट्रैकर</string>
+    <string name="title_profile">प्रोफ़ाइल और सेटिंग्स</string>
+    <string name="title_analyzer">रिपोर्ट विश्लेषक</string>
+
+    <string name="action_back">वापस जाएँ</string>
+
+    <!-- Home -->
+    <string name="greeting_morning">सुप्रभात</string>
+    <string name="greeting_afternoon">शुभ दोपहर</string>
+    <string name="greeting_evening">शुभ संध्या</string>
+    <string name="greeting_night">नमस्ते</string>
+    <string name="home_subtitle">आज हम आपकी कैसे मदद कर सकते हैं?</string>
+    <string name="home_quick_access">त्वरित पहुँच</string>
+    <string name="home_card_assistant_title">एआई सहायक</string>
+    <string name="home_card_assistant_desc">सामान्य स्वास्थ्य प्रश्न पूछें</string>
+    <string name="home_card_vault_title">मेडिकल वॉल्ट</string>
+    <string name="home_card_vault_desc">अपनी रिपोर्ट एक ही जगह रखें</string>
+    <string name="home_card_analyzer_title">रिपोर्ट विश्लेषक</string>
+    <string name="home_card_analyzer_desc">रिपोर्ट की सरल भाषा में व्याख्या पाएँ</string>
+    <string name="home_card_profile_title">प्रोफ़ाइल</string>
+    <string name="home_card_profile_desc">अपने खाते का विवरण देखें</string>
+    <string name="home_disclaimer">MedAssist सामान्य स्वास्थ्य जानकारी देता है। यह डॉक्टर की सलाह का विकल्प नहीं है।</string>
+
+    <!-- Shared states -->
+    <string name="common_loading">लोड हो रहा है…</string>
+    <string name="common_retry">फिर कोशिश करें</string>
+    <string name="common_error_title">कुछ गड़बड़ हो गई</string>
+    <string name="common_error_generic">हम यह पूरा नहीं कर सके। अपना कनेक्शन जाँचें और फिर कोशिश करें।</string>
+    <string name="common_offline_banner">आप ऑफ़लाइन हैं। कुछ सुविधाओं के लिए इंटरनेट ज़रूरी है।</string>
+
+    <string name="section_pending_title">जल्द आ रहा है</string>
+    <string name="section_pending_body">यह भाग इस बिल्ड में अभी उपलब्ध नहीं है।</string>
+
+    <!-- Phase 2: greeting with a name -->
+    <string name="greeting_named">%1$s, %2$s</string>
+
+    <!-- Sign in / register / reset / verify: shared -->
+    <string name="field_name">पूरा नाम</string>
+    <string name="field_email">ईमेल</string>
+    <string name="field_password">पासवर्ड</string>
+    <string name="field_confirm_password">पासवर्ड की पुष्टि करें</string>
+    <string name="action_show">दिखाएँ</string>
+    <string name="action_hide">छिपाएँ</string>
+    <string name="password_show_description">पासवर्ड दिखाएँ</string>
+    <string name="password_hide_description">पासवर्ड छिपाएँ</string>
+    <string name="action_cancel">रद्द करें</string>
+
+    <!-- Login -->
+    <string name="login_title">वापसी पर स्वागत है</string>
+    <string name="login_subtitle">अपने MedAssist खाते में साइन इन करें।</string>
+    <string name="action_sign_in">साइन इन करें</string>
+    <string name="action_forgot_password">पासवर्ड भूल गए?</string>
+    <string name="login_no_account">MedAssist पर नए हैं?</string>
+    <string name="action_register">खाता बनाएँ</string>
+
+    <!-- Register -->
+    <string name="register_title">अपना खाता बनाएँ</string>
+    <string name="register_subtitle">आपके दस्तावेज़ और स्वास्थ्य डेटा केवल आपके खाते से जुड़े रहते हैं।</string>
+    <string name="register_password_hint">कम से कम 8 अक्षर रखें, जिनमें अक्षर और अंक दोनों हों।</string>
+    <string name="register_have_account">पहले से खाता है?</string>
+
+    <!-- Forgot password -->
+    <string name="forgot_title">पासवर्ड रीसेट करें</string>
+    <string name="forgot_subtitle">अपना ईमेल डालें। हम पासवर्ड रीसेट करने का लिंक भेजेंगे।</string>
+    <string name="action_send_reset_link">रीसेट लिंक भेजें</string>
+    <string name="action_back_to_sign_in">साइन इन पर वापस जाएँ</string>
+    <string name="action_use_different_email">दूसरा ईमेल इस्तेमाल करें</string>
+    <string name="forgot_sent_title">अपना ईमेल देखें</string>
+    <string name="forgot_sent_body">यदि %1$s के लिए कोई खाता है, तो हमने पासवर्ड रीसेट लिंक भेज दिया है।</string>
+    <string name="forgot_sent_banner">पहुँचने में कुछ मिनट लग सकते हैं। स्पैम फ़ोल्डर भी देखें।</string>
+
+    <!-- Verify email -->
+    <string name="verify_title">अपना ईमेल सत्यापित करें</string>
+    <string name="verify_body">हमने %1$s पर सत्यापन लिंक भेजा है। उसे खोलें, फिर यहाँ लौटकर नीचे का बटन दबाएँ। न मिले तो स्पैम फ़ोल्डर देखें।</string>
+    <string name="action_verify_done">मैंने ईमेल सत्यापित कर लिया है</string>
+    <string name="verify_not_yet">आपका ईमेल अभी सत्यापित नहीं हुआ है। ईमेल में दिया लिंक खोलकर फिर कोशिश करें।</string>
+    <string name="action_resend">ईमेल दोबारा भेजें</string>
+    <string name="verify_resent">सत्यापन ईमेल भेज दिया गया है।</string>
+    <string name="verify_resend_wait">%1$d सेकंड बाद दोबारा भेजें</string>
+    <string name="action_use_other_account">दूसरे खाते का उपयोग करें</string>
+
+    <!-- Form validation -->
+    <string name="error_name_empty">कृपया अपना नाम डालें।</string>
+    <string name="error_name_too_long">नाम 60 अक्षरों से ज़्यादा नहीं होना चाहिए।</string>
+    <string name="error_email_empty">कृपया अपना ईमेल डालें।</string>
+    <string name="error_email_invalid">मान्य ईमेल पता डालें।</string>
+    <string name="error_password_empty">कृपया अपना पासवर्ड डालें।</string>
+    <string name="error_password_short">पासवर्ड कम से कम 8 अक्षर का होना चाहिए।</string>
+    <string name="error_password_weak">पासवर्ड में अक्षर और अंक दोनों होने चाहिए।</string>
+    <string name="error_confirm_empty">कृपया पासवर्ड दोबारा डालें।</string>
+    <string name="error_passwords_mismatch">पासवर्ड मेल नहीं खाते।</string>
+
+    <!-- Sign-in service errors -->
+    <string name="auth_error_invalid_credentials">ईमेल या पासवर्ड गलत है।</string>
+    <string name="auth_error_email_in_use">इस ईमेल से खाता पहले से मौजूद है। साइन इन करके देखें।</string>
+    <string name="auth_error_weak_password">यह पासवर्ड पर्याप्त मज़बूत नहीं है। कम से कम 8 अक्षर रखें, जिनमें अक्षर और अंक हों।</string>
+    <string name="auth_error_network">इंटरनेट कनेक्शन नहीं है। कनेक्शन जाँचकर फिर कोशिश करें।</string>
+    <string name="auth_error_too_many">बहुत ज़्यादा प्रयास हो गए। कुछ मिनट रुककर फिर कोशिश करें।</string>
+    <string name="auth_error_disabled">यह खाता निष्क्रिय कर दिया गया है। कृपया सहायता से संपर्क करें।</string>
+    <string name="auth_error_session_expired">आपका सत्र समाप्त हो गया है। कृपया फिर से साइन इन करें।</string>
+    <string name="auth_error_unknown">कुछ गड़बड़ हो गई। कृपया फिर कोशिश करें।</string>
+
+    <!-- Profile -->
+    <string name="profile_account_section">खाता</string>
+    <string name="profile_name_label">नाम</string>
+    <string name="profile_name_unset">सेट नहीं है</string>
+    <string name="profile_email_label">ईमेल</string>
+    <string name="profile_email_status_verified">ईमेल सत्यापित</string>
+    <string name="action_sign_out">साइन आउट करें</string>
+    <string name="profile_danger_section">खाता हटाएँ</string>
+    <string name="profile_delete_explainer">अपना खाता, सहेजी गई प्रोफ़ाइल और मेडिकल वॉल्ट के सभी दस्तावेज़ हमेशा के लिए हटाएँ। इसे वापस नहीं किया जा सकता।</string>
+    <string name="action_delete_account">मेरा खाता हटाएँ</string>
+    <string name="delete_title">क्या आप अपना खाता हटाना चाहते हैं?</string>
+    <string name="delete_body">इससे आपका खाता, सहेजी गई प्रोफ़ाइल और अपलोड किए गए सभी दस्तावेज़ हमेशा के लिए हट जाएँगे। इसे वापस नहीं किया जा सकता। पुष्टि के लिए अपना पासवर्ड डालें।</string>
+    <string name="delete_confirm">हमेशा के लिए हटाएँ</string>
+    <string name="delete_error_wrong_password">यह पासवर्ड गलत है।</string>
+    <!-- Medical Vault (Phase 3) -->
+    <string name="vault_action_upload">PDF अपलोड करें</string>
+    <string name="vault_limit_note">केवल PDF फ़ाइलें, हर फ़ाइल अधिकतम %1$d MB। आपके खाते में निजी रूप से सहेजी जाती हैं।</string>
+    <string name="vault_search_label">दस्तावेज़ खोजें</string>
+    <string name="vault_filter_all">सभी</string>
+    <string name="vault_filter_label">श्रेणी के अनुसार छाँटें</string>
+    <string name="vault_sort_label">क्रम: %1$s</string>
+    <string name="vault_sort_menu">क्रम बदलें</string>
+    <string name="vault_sort_newest">नए पहले</string>
+    <string name="vault_sort_oldest">पुराने पहले</string>
+    <string name="vault_sort_name">नाम (A–Z)</string>
+    <string name="vault_sort_largest">बड़े पहले</string>
+    <string name="vault_empty_title">अभी कोई दस्तावेज़ नहीं</string>
+    <string name="vault_empty_body">किसी रिपोर्ट या पर्चे की PDF अपलोड करें, ताकि वह सुरक्षित रहे और आप उसे कभी भी पढ़ सकें।</string>
+    <string name="vault_category_empty_title">इस श्रेणी के लिए कोई दस्तावेज़ अपलोड नहीं किया गया है</string>
+    <string name="vault_category_empty_body">इसे यहाँ देखने के लिए एक PDF अपलोड करें और उसे इस श्रेणी में रखें।</string>
+    <string name="vault_no_results_title">कोई मिलता-जुलता दस्तावेज़ नहीं</string>
+    <string name="vault_no_results_body">कोई दूसरा शब्द या श्रेणी आज़माएँ।</string>
+    <string name="vault_action_clear_filters">खोज और फ़िल्टर हटाएँ</string>
+    <string name="vault_document_count">%2$d में से %1$d दस्तावेज़</string>
+    <string name="vault_doc_meta">%1$s · %2$s</string>
+    <string name="vault_doc_actions">%1$s के लिए और विकल्प</string>
+    <string name="vault_action_open">खोलें</string>
+    <string name="vault_action_edit">नाम बदलें या संपादित करें</string>
+    <string name="vault_action_delete">हटाएँ</string>
+    <string name="vault_reading_file">फ़ाइल की जाँच हो रही है…</string>
+    <string name="vault_upload_title">दस्तावेज़ अपलोड करें</string>
+    <string name="vault_upload_file_size">फ़ाइल का आकार: %1$s</string>
+    <string name="field_document_name">दस्तावेज़ का नाम</string>
+    <string name="field_category">श्रेणी</string>
+    <string name="field_notes">टिप्पणी (वैकल्पिक)</string>
+    <string name="vault_notes_counter">%1$d / %2$d</string>
+    <string name="vault_action_start_upload">अपलोड करें</string>
+    <string name="vault_action_retry_upload">फिर से अपलोड करें</string>
+    <string name="vault_uploading">अपलोड हो रहा है… %1$d%%</string>
+    <string name="vault_upload_done">दस्तावेज़ अपलोड हो गया।</string>
+    <string name="vault_edit_title">दस्तावेज़ संपादित करें</string>
+    <string name="action_save">सहेजें</string>
+    <string name="vault_saved">बदलाव सहेज लिए गए।</string>
+    <string name="vault_delete_title">क्या यह दस्तावेज़ हटाना है?</string>
+    <string name="vault_delete_body">“%1$s” हमेशा के लिए हट जाएगा। इसे वापस नहीं किया जा सकता।</string>
+    <string name="vault_delete_confirm">हटाएँ</string>
+    <string name="vault_deleted">दस्तावेज़ हटा दिया गया।</string>
+    <string name="category_blood_tests">रक्त जाँच</string>
+    <string name="category_prescriptions">पर्चे</string>
+    <string name="category_diagnostic_reports">जाँच रिपोर्ट</string>
+    <string name="category_imaging_reports">इमेजिंग रिपोर्ट</string>
+    <string name="category_medical_history">चिकित्सा इतिहास</string>
+    <string name="category_other">अन्य</string>
+    <string name="vault_error_network">सर्वर तक नहीं पहुँच सके। अपना इंटरनेट कनेक्शन जाँचें और फिर कोशिश करें।</string>
+    <string name="vault_error_offline">आप ऑफ़लाइन हैं। इंटरनेट से जुड़ें और फिर कोशिश करें।</string>
+    <string name="vault_error_permission">आपको यह करने की अनुमति नहीं है। साइन आउट करके फिर साइन इन करें।</string>
+    <string name="vault_error_not_found">यह दस्तावेज़ अब मौजूद नहीं है।</string>
+    <string name="vault_error_quota">ऐप की आज की मुफ़्त सीमा पूरी हो गई है। कृपया कल फिर कोशिश करें।</string>
+    <string name="vault_error_empty_file">यह फ़ाइल खाली है।</string>
+    <string name="vault_error_too_large">यह फ़ाइल बहुत बड़ी है। सीमा 10 MB है।</string>
+    <string name="vault_error_not_pdf">केवल PDF फ़ाइलें अपलोड की जा सकती हैं।</string>
+    <string name="vault_error_password_protected">यह PDF पासवर्ड से सुरक्षित है। पासवर्ड हटाकर फिर कोशिश करें।</string>
+    <string name="vault_error_corrupted">यह PDF खराब है और खुल नहीं सकती।</string>
+    <string name="vault_error_unreadable">चुनी गई फ़ाइल पढ़ी नहीं जा सकी। उसे फिर से चुनें।</string>
+    <string name="vault_error_device_full">आपके फ़ोन में जगह नहीं बची है। कुछ जगह खाली करके फिर कोशिश करें।</string>
+    <string name="vault_error_doc_name_empty">कृपया दस्तावेज़ का नाम डालें।</string>
+    <string name="vault_error_doc_name_too_long">नाम 100 अक्षरों या उससे कम का होना चाहिए।</string>
+    <string name="vault_error_notes_too_long">टिप्पणी 500 अक्षरों या उससे कम की होनी चाहिए।</string>
+
+    <!-- PDF viewer -->
+    <string name="viewer_loading">दस्तावेज़ खुल रहा है…</string>
+    <string name="viewer_page_indicator">पृष्ठ %1$d / %2$d</string>
+    <string name="viewer_page_description">%2$d में से पृष्ठ %1$d</string>
+    <string name="viewer_previous_page">पिछला पृष्ठ</string>
+    <string name="viewer_next_page">अगला पृष्ठ</string>
+    <string name="viewer_zoom_in">ज़ूम इन करें</string>
+    <string name="viewer_zoom_out">ज़ूम आउट करें</string>
+    <string name="viewer_zoom_level">ज़ूम %1$d%%</string>
+
+    <!-- Home: recent documents -->
+    <string name="home_recent_documents">हाल के दस्तावेज़</string>
+    <string name="home_recent_empty">अभी कोई दस्तावेज़ नहीं। वॉल्ट में अपना पहला दस्तावेज़ अपलोड करें।</string>
+    <string name="home_see_all">सभी देखें</string>
+    <string name="home_recent_error">आपके दस्तावेज़ लोड नहीं हो सके।</string>
+    <!-- Phase 4: AI सहायक -->
+    <string name="chat_disclaimer">केवल सामान्य स्वास्थ्य जानकारी। यह निदान या चिकित्सा सलाह नहीं है। आपात स्थिति में 112 पर कॉल करें।</string>
+    <string name="chat_menu">चैट विकल्प</string>
+    <string name="chat_new_conversation">नई बातचीत</string>
+    <string name="chat_save_history">चैट इतिहास सेव करें</string>
+    <string name="chat_save_history_desc">चैट सिर्फ़ इसी फ़ोन पर रखी जाती है। शुरू में बंद रहता है।</string>
+    <string name="chat_new_title">नई बातचीत शुरू करें?</string>
+    <string name="chat_new_body">यह चैट मिटा दी जाएगी।</string>
+    <string name="chat_new_body_saved">यह चैट मिटा दी जाएगी और इस फ़ोन पर सेव की गई कॉपी भी हटा दी जाएगी।</string>
+    <string name="chat_new_confirm">चैट मिटाएँ</string>
+    <string name="chat_cancel">रद्द करें</string>
+    <string name="chat_emergency_title">क्या यह आपात स्थिति है?</string>
+    <string name="chat_emergency_body">अगर किसी की जान को ख़तरा है, तो अभी 112 पर कॉल करें या नज़दीकी इमरजेंसी विभाग जाएँ। आत्महत्या के विचार आने पर Tele-MANAS को 14416 पर कॉल करें (मुफ़्त, 24 घंटे)।</string>
+    <string name="chat_call_emergency">112 पर कॉल करें</string>
+    <string name="chat_dismiss">बंद करें</string>
+    <string name="chat_welcome_title">स्वास्थ्य से जुड़ा सवाल पूछें</string>
+    <string name="chat_welcome_body">मैं मेडिकल शब्दों और रिपोर्ट को समझा सकता हूँ, सेहत के सुझाव दे सकता हूँ और डॉक्टर से मिलने की तैयारी में मदद कर सकता हूँ। कृपया अपना नाम, पता या पहचान नंबर जैसी निजी जानकारी साझा न करें।</string>
+    <string name="chat_suggestion_1">ब्लड टेस्ट में HbA1c का क्या मतलब है?</string>
+    <string name="chat_suggestion_2">डॉक्टर से मिलने की तैयारी कैसे करूँ?</string>
+    <string name="chat_suggestion_3">बेहतर नींद के लिए सुझाव</string>
+    <string name="chat_input_label">अपना सवाल लिखें</string>
+    <string name="chat_send">भेजें</string>
+    <string name="chat_speech_to_text">अपना सवाल बोलें</string>
+    <string name="chat_speech_prompt">अपना सवाल बोलें</string>
+    <string name="chat_speech_unavailable">इस डिवाइस पर वाक् पहचान उपलब्ध नहीं है।</string>
+    <string name="chat_speech_permission_denied">बोलकर लिखने के लिए माइक्रोफ़ोन की अनुमति आवश्यक है।</string>
+    <string name="chat_typing">MedAssist जवाब लिख रहा है…</string>
+    <string name="chat_you_said">आपने कहा: %1$s। %2$s</string>
+    <string name="chat_assistant_said">MedAssist का जवाब: %1$s। %2$s</string>
+    <string name="chat_not_sent">नहीं भेजा गया · %1$s</string>
+    <string name="chat_retry">फिर से कोशिश करें</string>
+    <string name="chat_char_count">%1$d/%2$d</string>
+    <string name="chat_error_too_long">कृपया अपना सवाल %1$d अक्षरों से छोटा रखें।</string>
+    <string name="chat_error_offline">आप ऑफ़लाइन हैं। इंटरनेट से जुड़कर फिर कोशिश करें।</string>
+    <string name="chat_error_rate_limited">आप बहुत जल्दी-जल्दी सवाल भेज रहे हैं। एक मिनट रुककर फिर कोशिश करें।</string>
+    <string name="chat_error_network">AI सेवा से संपर्क नहीं हो सका। अपना कनेक्शन जाँचें और फिर से कोशिश करें।</string>
+    <string name="chat_error_timeout">जवाब आने में बहुत समय लगा। फिर से कोशिश करें।</string>
+    <string name="chat_error_quota">आज की मुफ़्त AI सीमा पूरी हो गई है। कृपया बाद में कोशिश करें।</string>
+    <string name="chat_error_blocked">मैं इस सवाल का जवाब नहीं दे सकता। इसे किसी और तरीके से पूछकर देखें।</string>
+    <string name="chat_error_not_set_up">AI सहायक अभी सेट अप नहीं है। Firebase कंसोल में Firebase AI Logic चालू करें (README देखें)।</string>
+    <string name="chat_error_app_check">ऐप की यह कॉपी अभी App Check से सत्यापित नहीं है। Firebase कंसोल में डीबग टोकन जोड़ें (README देखें)।</string>
+    <string name="chat_error_region">AI सेवा आपके क्षेत्र में उपलब्ध नहीं है।</string>
+    <string name="chat_error_server">AI सेवा में कोई समस्या आई। कृपया फिर से कोशिश करें।</string>
+    <string name="chat_error_empty">कोई जवाब नहीं मिला। कृपया फिर से कोशिश करें।</string>
+    <string name="chat_error_unknown">कुछ गड़बड़ हो गई। कृपया फिर से कोशिश करें।</string>
+
+    <!-- चरण 5: रिपोर्ट विश्लेषक -->
+    <string name="analyzer_intro_title">अपनी मेडिकल रिपोर्ट समझें</string>
+    <string name="analyzer_intro_body">अपनी मेडिकल वॉल्ट में मौजूद PDF चुनें। MedAssist इस डिवाइस पर पढ़े जा सकने वाले टेक्स्ट को निकालेगा। सहमति संदेश देखने के बाद, वही टेक्स्ट जानकारीपूर्ण व्याख्या के लिए Google की Gemini सेवा को भेजा जाएगा। केवल स्कैन की गई इमेज वाली PDF अभी समर्थित नहीं हैं।</string>
+    <string name="analyzer_choose_report">अपनी वॉल्ट से रिपोर्ट चुनें</string>
+    <string name="analyzer_loading_documents">मेडिकल वॉल्ट के दस्तावेज़ लोड हो रहे हैं…</string>
+    <string name="analyzer_no_documents_title">वॉल्ट में कोई PDF नहीं है</string>
+    <string name="analyzer_no_documents_body">पहले मेडिकल वॉल्ट में रिपोर्ट की PDF अपलोड करें। फिर व्याख्या पाने के लिए यहाँ लौटें।</string>
+    <string name="analyzer_open_vault">मेडिकल वॉल्ट खोलें</string>
+    <string name="analyzer_action_analyze">रिपोर्ट का विश्लेषण करें</string>
+    <string name="analyzer_consent_title">क्या इस रिपोर्ट का AI विश्लेषण करना है?</string>
+    <string name="analyzer_consent_document">चुना गया दस्तावेज़: %1$s</string>
+    <string name="analyzer_consent_body">MedAssist इस डिवाइस पर पढ़े जा सकने वाले टेक्स्ट को निकालेगा और Firebase AI Logic के ज़रिए Google की Gemini सेवा को भेजेगा। PDF फ़ाइल स्वयं अपलोड नहीं की जाएगी।</string>
+    <string name="analyzer_consent_privacy">आगे तभी बढ़ें जब आप इस रिपोर्ट के टेक्स्ट को प्रोसेसिंग के लिए साझा करने पर सहमत हों। AI का उत्तर गलत हो सकता है। MedAssist विश्लेषण या निकाले गए टेक्स्ट को अपने-आप सहेजता नहीं है।</string>
+    <string name="analyzer_consent_confirm">जारी रखें और विश्लेषण करें</string>
+    <string name="analyzer_progress_title">रिपोर्ट का विश्लेषण हो रहा है</string>
+    <string name="analyzer_stage_downloading">वॉल्ट से आपकी निजी PDF ली जा रही है…</string>
+    <string name="analyzer_stage_extracting">इस डिवाइस पर पढ़ा जा सकने वाला टेक्स्ट निकाला जा रहा है…</string>
+    <string name="analyzer_stage_analyzing">AI व्याख्या तैयार कर रहा है…</string>
+    <string name="analyzer_error_offline">रिपोर्ट विश्लेषण के लिए इंटरनेट चाहिए। कनेक्ट करके फिर कोशिश करें।</string>
+    <string name="analyzer_error_scanned">पढ़ने योग्य टेक्स्ट नहीं मिला। यह स्कैन की गई या केवल इमेज वाली PDF हो सकती है; इस मुफ़्त चरण में OCR शामिल नहीं है।</string>
+    <string name="analyzer_error_pdf_locked">यह PDF पासवर्ड से सुरक्षित है और पढ़ी नहीं जा सकी। बिना पासवर्ड वाली प्रति अपलोड करें।</string>
+    <string name="analyzer_error_pdf_unreadable">PDF का टेक्स्ट पढ़ा नहीं जा सका। जाँचें कि फ़ाइल वॉल्ट में खुलती है या दूसरी प्रति अपलोड करें।</string>
+    <string name="analyzer_result_title">रिपोर्ट की व्याख्या</string>
+    <string name="analyzer_result_ai_label">यह AI द्वारा तैयार की गई व्याख्या है। नीचे दिए गए मान भी AI ने पहचाने हैं; उन्हें मूल PDF और निकाले गए टेक्स्ट से मिलाकर जाँचें।</string>
+    <string name="analyzer_result_for">रिपोर्ट: %1$s</string>
+    <string name="analyzer_open_original">मूल PDF खोलें</string>
+    <string name="analyzer_text_truncated">सीमित प्रोसेसिंग के लिए लंबी PDF का केवल कुछ हिस्सा विश्लेषण के लिए भेजा गया। पूरी मूल रिपोर्ट भी जाँचें।</string>
+    <string name="analyzer_section_overview">रिपोर्ट का सार</string>
+    <string name="analyzer_section_findings">मुख्य निष्कर्ष</string>
+    <string name="analyzer_section_terms">मेडिकल शब्दों की व्याख्या</string>
+    <string name="analyzer_section_values">रिपोर्ट में दिए गए मान और रेंज</string>
+    <string name="analyzer_section_questions">डॉक्टर से पूछने योग्य प्रश्न</string>
+    <string name="analyzer_section_limitations">सीमाएँ और अनिश्चितता</string>
+    <string name="analyzer_section_not_available">AI ने इस भाग के लिए जानकारी नहीं दी। मूल रिपोर्ट देखें।</string>
+    <string name="analyzer_no_values">उत्तर में भरोसेमंद रूप से सूचीबद्ध किए जा सकने वाले टेस्ट मान नहीं मिले। मूल रिपोर्ट को ही सही स्रोत मानें।</string>
+    <string name="analyzer_test_unknown">टेस्ट का नाम पहचाना नहीं गया</string>
+    <string name="analyzer_test_value">मान: %1$s</string>
+    <string name="analyzer_reference_range">रिपोर्ट में दी गई सामान्य सीमा: %1$s</string>
+    <string name="analyzer_report_flag">मूल टेक्स्ट में दिया गया संकेत: %1$s</string>
+    <string name="analyzer_source_title">मूल PDF से निकाला गया टेक्स्ट</string>
+    <string name="analyzer_source_show">निकाला गया टेक्स्ट दिखाएँ</string>
+    <string name="analyzer_source_hide">निकाला गया टेक्स्ट छिपाएँ</string>
+    <string name="analyzer_disclaimer_title">महत्वपूर्ण चिकित्सा सूचना</string>
+    <string name="analyzer_disclaimer_body">AI से बनी व्याख्या केवल जानकारी के लिए है। यह चिकित्सा निदान नहीं है और पेशेवर चिकित्सा सलाह का विकल्प नहीं है। सभी मान और रेंज मूल रिपोर्ट से जाँचें तथा नतीजों पर योग्य स्वास्थ्य पेशेवर से चर्चा करें। इस व्याख्या के आधार पर दवाओं में बदलाव न करें।</string>
+
+
+    <!-- चरण 7: एक्सेसिबिलिटी, ऐप भाषा और रूप-रंग -->
+    <string name="settings_accessibility_title">दिखावट और एक्सेसिबिलिटी</string>
+    <string name="settings_dark_mode_title">डार्क मोड</string>
+    <string name="settings_dark_mode_summary">MedAssist में डार्क थीम का उपयोग करें। ऐप का PDF रीडर हल्का ही रहेगा।</string>
+    <string name="settings_language_title">ऐप की भाषा</string>
+    <string name="settings_language_summary">इंटरफ़ेस और AI जवाबों के लिए अंग्रेज़ी या हिंदी चुनें।</string>
+    <string name="settings_language_english">English</string>
+    <string name="settings_language_hindi">हिन्दी</string>
+    <string name="settings_narration_title">आवाज़ में पढ़ना</string>
+    <string name="settings_narration_summary">आपके डिवाइस की टेक्स्ट-टू-स्पीच आवाज़ का उपयोग होगा। उपलब्ध आवाज़ें फ़ोन पर निर्भर करती हैं।</string>
+    <string name="settings_narration_enabled">आवाज़ में पढ़ना और बोले गए अलर्ट चालू करें</string>
+    <string name="settings_auto_narration">स्क्रीन का परिचय अपने-आप पढ़ें</string>
+    <string name="settings_narration_speed">बोलने की गति: %1$.1f×</string>
+    <string name="settings_narration_volume">आवाज़ का स्तर: %1$d%%</string>
+    <string name="settings_narration_play">नमूना चलाएँ</string>
+    <string name="settings_narration_pause">रोकें</string>
+    <string name="settings_narration_resume">फिर शुरू करें</string>
+    <string name="settings_narration_stop">बंद करें</string>
+    <string name="a11y_listen_to_screen">इस स्क्रीन को सुनें</string>
+    <string name="a11y_voice_unavailable">चुनी गई टेक्स्ट-टू-स्पीच आवाज़ उपलब्ध नहीं है। Android की टेक्स्ट-टू-स्पीच सेटिंग में अंग्रेज़ी या हिंदी की आवाज़ इंस्टॉल या चुनें।</string>
+    <string name="a11y_speech_home">होम। त्वरित पहुँच से AI सहायक, मेडिकल वॉल्ट, रिपोर्ट विश्लेषक और प्रोफ़ाइल खोल सकते हैं। हाल के दस्तावेज़ नीचे दिखते हैं।</string>
+    <string name="a11y_speech_vault">मेडिकल वॉल्ट। अपनी निजी PDF खोजें, क्रम बदलें, अपलोड करें और व्यवस्थित करें। खोलने के लिए कोई दस्तावेज़ चुनें।</string>
+    <string name="a11y_speech_assistant">AI सहायक। अंग्रेज़ी या हिंदी में सामान्य स्वास्थ्य प्रश्न पूछें। यह सेवा सामान्य जानकारी देती है, निदान या उपचार नहीं। निजी पहचान जानकारी साझा न करें।</string>
+    <string name="a11y_speech_analyzer">रिपोर्ट विश्लेषक। मेडिकल वॉल्ट से PDF चुनें, सहमति संदेश पढ़ें और जानकारीपूर्ण व्याख्या माँगें। सभी मानों को मूल रिपोर्ट से मिलाएँ।</string>
+    <string name="a11y_speech_profile">प्रोफ़ाइल और सेटिंग्स। अपना खाता देखें, अंग्रेज़ी या हिंदी चुनें, डार्क मोड चालू करें और आवाज़ में पढ़ने की सेटिंग बदलें। आप साइन आउट या खाता हटाना भी चुन सकते हैं।</string>
+    <string name="a11y_speech_document">PDF रीडर। दस्तावेज़ के पन्नों में जाने के लिए पिछला पृष्ठ और अगला पृष्ठ चुनें। आकार बदलने के लिए ज़ूम इन या ज़ूम आउट करें।</string>
+
+    <string name="app_name">MedAssist</string>
+
+    <string name="a11y_narration_playing">आवाज़ में पढ़ा जा रहा है</string>
+    <string name="a11y_narration_paused">आवाज़ में पढ़ना रुका हुआ है</string>
+
+</resources>

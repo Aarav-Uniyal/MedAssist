@@ -1,0 +1,21 @@
+# Android / Gradle
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/app/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# Secrets and credentials: never commit these
+google-services.json
+*.jks
+*.keystore
+functions/.env
+functions/.env.*
+functions/.secret.local
+functions/node_modules/
+.firebase/
