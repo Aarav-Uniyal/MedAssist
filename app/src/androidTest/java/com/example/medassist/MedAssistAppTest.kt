@@ -5,6 +5,7 @@ import androidx.compose.ui.test.assertDoesNotExist
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.performClick
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -107,6 +108,7 @@ class MedAssistAppTest {
 
         composeRule.onNodeWithText(text(R.string.title_analyzer)).assertIsDisplayed()
         composeRule.onNodeWithText(text(R.string.nav_analyzer)).assertIsDisplayed()
+        composeRule.onNodeWithContentDescription(text(R.string.action_back)).assertDoesNotExist()
         composeRule.onNodeWithText(text(R.string.nav_steps)).assertDoesNotExist()
     }
 
