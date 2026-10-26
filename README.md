@@ -1,4 +1,4 @@
-# MedAssist
+# MedAssist — Decode Your Health.
 
 **MedAssist** is an Android medical-assistance application built with Kotlin and Jetpack Compose. It helps users organize personal medical documents, ask health-information questions with an AI assistant, and understand text-based medical reports through an accessible, bilingual interface.
 
