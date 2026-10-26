@@ -2,8 +2,6 @@
 
 **MedAssist** is an Android medical-assistance application built with Kotlin and Jetpack Compose. It helps users organize personal medical documents, ask health-information questions with an AI assistant, and understand text-based medical reports through an accessible, bilingual interface.
 
-> **Medical information notice:** MedAssist provides educational information, not a medical diagnosis or treatment plan. AI-generated content can be inaccurate or incomplete. Confirm report values against the original document and consult a qualified healthcare professional for medical decisions.
-
 ## Features
 
 ### Account and profile
@@ -185,4 +183,4 @@ See [`RELEASE_CHECKLIST.md`](RELEASE_CHECKLIST.md) for release procedures and [`
 
 ## Responsible use
 
-MedAssist is an educational project and is not a substitute for professional medical care. AI-generated explanations may omit or misinterpret information. Always compare extracted or summarized values with the original report and discuss medical concerns with a qualified healthcare professional. Do not use the app to make urgent medical decisions or to start, stop, or change medication.
+MedAssist is an educational project and is not a substitute for professional medical care. Always compare extracted or summarized values with the original report and discuss medical concerns with a qualified healthcare professional. Do not use the app to make urgent medical decisions or to start, stop, or change medication.
