@@ -1,6 +1,5 @@
 package com.example.medassist.ui.analyzer
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,9 +21,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -45,6 +41,7 @@ import com.example.medassist.ui.components.MedAssistCard
 import com.example.medassist.ui.components.MedAssistTopBar
 import com.example.medassist.ui.components.OfflineBanner
 import com.example.medassist.ui.components.PrimaryButton
+import com.example.medassist.ui.components.ReadAloudButton
 import com.example.medassist.ui.components.SecondaryButton
 import com.example.medassist.ui.theme.AquaBlue
 import com.example.medassist.ui.theme.AquaDeep
@@ -59,7 +56,6 @@ import com.example.medassist.ui.vault.labelRes
 @Composable
 fun AnalyzerScreen(
     viewModel: ReportAnalyzerViewModel,
-    onBack: () -> Unit,
     onOpenVault: () -> Unit,
     onOpenDocument: (String) -> Unit,
 ) {
@@ -68,7 +64,7 @@ fun AnalyzerScreen(
     val busy = state.work is AnalyzerWorkState.Working
 
     Scaffold(
-        topBar = { MedAssistTopBar(title = stringResource(R.string.title_analyzer), onBack = onBack, narrationText = stringResource(R.string.a11y_speech_analyzer)) },
+        topBar = { MedAssistTopBar(title = stringResource(R.string.title_analyzer), narrationText = stringResource(R.string.a11y_speech_analyzer)) },
     ) { innerPadding ->
         // Use one bounded vertical scroller for the complete screen. This avoids nested
         // scrollable children in the empty/loading states, which can trigger Compose's
@@ -305,17 +301,80 @@ private fun AnalysisResultContent(
     result: AnalyzerDisplayResult,
     onOpenOriginal: (String) -> Unit,
 ) {
+    val resultTitle = stringResource(R.string.analyzer_result_title)
+    val aiLabel = stringResource(R.string.analyzer_result_ai_label)
+    val unavailable = stringResource(R.string.analyzer_section_not_available)
+    val noValues = stringResource(R.string.analyzer_no_values)
+    val overviewTitle = stringResource(R.string.analyzer_section_overview)
+    val findingsTitle = stringResource(R.string.analyzer_section_findings)
+    val termsTitle = stringResource(R.string.analyzer_section_terms)
+    val valuesTitle = stringResource(R.string.analyzer_section_values)
+    val questionsTitle = stringResource(R.string.analyzer_section_questions)
+    val limitationsTitle = stringResource(R.string.analyzer_section_limitations)
+    val disclaimerTitle = stringResource(R.string.analyzer_disclaimer_title)
+    val disclaimerBody = stringResource(R.string.analyzer_disclaimer_body)
+    val unknownTestName = stringResource(R.string.analyzer_test_unknown)
+    val testValueTemplate = stringResource(R.string.analyzer_test_value, "{value}")
+    val referenceRangeTemplate = stringResource(R.string.analyzer_reference_range, "{value}")
+    val reportFlagTemplate = stringResource(R.string.analyzer_report_flag, "{value}")
+    val reportDescription = if (document != null) {
+        stringResource(R.string.analyzer_result_for, document.name)
+    } else ""
+    val truncationNotice = if (result.textTruncated) {
+        stringResource(R.string.analyzer_text_truncated, result.pagesRead, result.totalPages)
+    } else ""
+    val testValueDescriptions = result.analysis.testValues.map { testValue ->
+        buildList {
+            add(testValue.testName.ifBlank { unknownTestName })
+            val displayedValue = listOf(testValue.value, testValue.unit)
+                .filter(String::isNotBlank).joinToString(" ")
+            if (displayedValue.isNotBlank()) add(testValueTemplate.replace("{value}", displayedValue))
+            if (testValue.referenceRange.isNotBlank()) {
+                add(referenceRangeTemplate.replace("{value}", testValue.referenceRange))
+            }
+            if (testValue.reportFlag.isNotBlank()) {
+                add(reportFlagTemplate.replace("{value}", testValue.reportFlag))
+            }
+        }.joinToString(". ")
+    }
+    val analysisNarration = buildString {
+        append(resultTitle).append(". ")
+        if (reportDescription.isNotBlank()) append(reportDescription).append(". ")
+        append(aiLabel).append(". ")
+        appendNarrationSection(overviewTitle, result.analysis.overview.ifBlank { unavailable })
+        appendNarrationListSection(findingsTitle, result.analysis.importantFindings, unavailable)
+        appendNarrationListSection(termsTitle, result.analysis.medicalTerms, unavailable)
+        appendNarrationListSection(valuesTitle, testValueDescriptions, noValues)
+        appendNarrationListSection(questionsTitle, result.analysis.questionsForDoctor, unavailable)
+        appendNarrationListSection(limitationsTitle, result.analysis.limitations, unavailable)
+        if (truncationNotice.isNotBlank()) append(truncationNotice).append(". ")
+        append(disclaimerTitle).append(". ").append(disclaimerBody)
+    }
+
     Column(verticalArrangement = Arrangement.spacedBy(Spacing.md)) {
-        Text(
-            text = stringResource(R.string.analyzer_result_title),
-            style = MaterialTheme.typography.titleLarge,
-            modifier = Modifier.semantics { heading() },
-        )
-        Text(
-            text = stringResource(R.string.analyzer_result_ai_label),
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween,
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = resultTitle,
+                    style = MaterialTheme.typography.titleLarge,
+                    modifier = Modifier.semantics { heading() },
+                )
+                Text(
+                    text = aiLabel,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            ReadAloudButton(
+                text = analysisNarration,
+                contentDescription = stringResource(R.string.analyzer_read_analysis_aloud),
+                testTag = "analyzer_read_aloud",
+            )
+        }
         document?.let { analyzedDocument ->
             Text(
                 text = stringResource(R.string.analyzer_result_for, analyzedDocument.name),
@@ -369,24 +428,19 @@ private fun AnalysisResultContent(
             BulletList(result.analysis.limitations)
         }
 
-        var showSourceText by remember(result.extractedSourceText) { mutableStateOf(false) }
-        MedAssistCard(modifier = Modifier.fillMaxWidth()) {
-            Text(
-                text = stringResource(R.string.analyzer_source_title),
-                style = MaterialTheme.typography.titleSmall,
-            )
-            TextButton(onClick = { showSourceText = !showSourceText }) {
-                Text(stringResource(if (showSourceText) R.string.analyzer_source_hide else R.string.analyzer_source_show))
-            }
-            AnimatedVisibility(visible = showSourceText) {
-                Text(
-                    text = result.extractedSourceText,
-                    style = MaterialTheme.typography.bodySmall,
-                    modifier = Modifier.fillMaxWidth(),
-                )
-            }
-        }
     }
+}
+
+private fun StringBuilder.appendNarrationSection(title: String, content: String) {
+    append(title).append(". ").append(content).append(". ")
+}
+
+private fun StringBuilder.appendNarrationListSection(
+    title: String,
+    items: List<String>,
+    emptyText: String,
+) {
+    appendNarrationSection(title, items.filter(String::isNotBlank).ifEmpty { listOf(emptyText) }.joinToString(". "))
 }
 
 @Composable

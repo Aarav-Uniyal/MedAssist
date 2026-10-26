@@ -52,7 +52,7 @@ fun MedAssistNavHost(
             HomeScreen(
                 userName = user.displayName,
                 onOpenTab = { screen -> navController.navigateToTab(screen.route) },
-                onOpenAnalyzer = { navController.navigate(Screen.Analyzer.route) },
+                onOpenAnalyzer = { navController.navigateToTab(Screen.Analyzer.route) },
                 recentDocuments = recent,
                 onOpenDocument = { id -> navController.navigate(Screen.Document.route(id)) },
             )
@@ -109,7 +109,6 @@ fun MedAssistNavHost(
             )
             AnalyzerScreen(
                 viewModel = analyzerVm,
-                onBack = { navController.popBackStack() },
                 onOpenVault = { navController.navigateToTab(Screen.Vault.route) },
                 onOpenDocument = { id -> navController.navigate(Screen.Document.route(id)) },
             )

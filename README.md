@@ -310,7 +310,7 @@ The report is processed on-device up to text extraction. Once the user confirms 
 
 - A persistent **Profile > Appearance & accessibility** section with a dark-mode switch. It updates the Compose Material 3 color scheme immediately and remembers the choice across app restarts. Android status/navigation bar icon contrast follows the chosen theme. The in-app PDF reader is intentionally kept in the light theme.
 - An in-app language selector for **English** and **Hindi** using `AppCompatDelegate.setApplicationLocales` and the already configured `locales_config.xml`. The setting persists, and the existing chatbot/report analyzer language selection reads the active app locale.
-- An Android `TextToSpeech` narrator using installed device voices. A Listen action appears on Home, the main screen top bars and sign-in screens; narration reads an accessible screen introduction rather than attempting to infer every dynamic pixel or document value.
+- An Android `TextToSpeech` narrator using installed device voices. A Listen action appears on Home, the main screen top bars and sign-in screens to read an accessible screen introduction. Dedicated read-aloud actions also read individual AI assistant replies and the complete structured Report Analyzer result.
 - Profile controls to enable/disable narration, automatically narrate screen introductions when navigating, and adjust speech speed (0.5×–2.0×) and volume. Play sample, Pause, Resume and Stop controls are available in Settings; a compact playback bar provides Pause/Resume/Stop while narration is active elsewhere.
 - Important form success/error messages, offline status and screen errors are marked as TalkBack live regions and are spoken when narration is enabled. Headings, image descriptions, labelled controls, scrollable layouts and minimum touch-target sizes complement TalkBack rather than replacing it.
 - Settings use Android app-private SharedPreferences. No preferences, speech audio or personal data are sent to Firebase.
@@ -330,12 +330,14 @@ The report is processed on-device up to text extraction. Once the user confirms 
 | 9 | Trigger a validation error or disconnect the network | TalkBack can announce the status; voice narration reads important status/error text while narration is enabled |
 | 10 | Enable Android TalkBack and increase system font size | Controls have readable labels, the screen remains scrollable, and important actions remain usable |
 | 11 | Remove Hindi voice data or use a device without it | The app shows an understandable TextToSpeech availability message in Settings; no crash occurs |
+| 12 | Tap the speaker button on an assistant response | Only that assistant response is read in the selected app language |
+| 13 | Analyze a sample report and tap the Analyzer speaker button | The full structured analysis and medical disclaimer are read aloud; no extracted-source-text panel is shown |
 
 ### Phase 7 limitations
 
 - TextToSpeech voices are provided by Android and depend on the device. Hindi voice data may need to be installed in the phone's Text-to-Speech settings; this is not a paid MedAssist feature.
 - Android's `TextToSpeech` API does not expose a universal pause-at-exact-character operation. Pause stops the current sentence; Resume repeats that sentence from its beginning before continuing.
-- Screen narration reads curated titles/instructions, not every dynamic chat or report line. TalkBack remains the recommended screen reader for complete UI exploration.
+- The general screen Listen action reads curated titles/instructions. Use each assistant message’s speaker button or the Analyzer result’s speaker button to read dynamic chat/report content. TalkBack remains the recommended screen reader for complete UI exploration.
 - PDF reader dark mode is intentionally not applied, as requested.
 - Language strings are already stored in `values/strings.xml` and `values-hi/strings.xml`; have a Hindi speaker review translations before public release.
 
@@ -417,3 +419,10 @@ If any of those files are missing from your project, you are using an incomplete
 ## Chatbot speech-to-text
 
 The AI Assistant input row includes a microphone button. The first use requests Android microphone permission; after permission is granted, the app opens Android's speech-recognition UI and inserts the recognized text into the message field for review before the user sends it. Recognition requests use the current app locale (English or Hindi). The feature uses Android's available speech recognition provider and does not add a paid Firebase service. Availability and offline recognition depend on the device's installed speech services and language packs.
+
+## Contextual read-aloud
+
+- Each assistant response has its own speaker button. Tapping it reads that response aloud using the app's selected language, speech speed, and volume. Starting another read-aloud request replaces the currently spoken text.
+- The Report Analyzer's completed result has a speaker button that reads the full analysis, including the overview, findings, medical terms, test values/ranges, questions, limitations, truncation notice when applicable, and medical disclaimer.
+- The expandable extracted-source-text display has been removed from the Analyzer. On-device extraction still runs because it is needed to request an AI explanation; the consent screen continues to disclose that the extracted text is sent for processing.
+- These buttons respect the narration-enabled setting in Profile and Settings and use Android's installed TextToSpeech voice. No additional API or paid service is required.

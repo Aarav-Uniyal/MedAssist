@@ -230,6 +230,7 @@
     <string name="chat_input_label">अपना सवाल लिखें</string>
     <string name="chat_send">भेजें</string>
     <string name="chat_speech_to_text">अपना सवाल बोलें</string>
+    <string name="chat_read_response_aloud">सहायक का यह जवाब आवाज़ में पढ़ें</string>
     <string name="chat_speech_prompt">अपना सवाल बोलें</string>
     <string name="chat_speech_unavailable">इस डिवाइस पर वाक् पहचान उपलब्ध नहीं है।</string>
     <string name="chat_speech_permission_denied">बोलकर लिखने के लिए माइक्रोफ़ोन की अनुमति आवश्यक है।</string>
@@ -276,7 +277,8 @@
     <string name="analyzer_error_pdf_locked">यह PDF पासवर्ड से सुरक्षित है और पढ़ी नहीं जा सकी। बिना पासवर्ड वाली प्रति अपलोड करें।</string>
     <string name="analyzer_error_pdf_unreadable">PDF का टेक्स्ट पढ़ा नहीं जा सका। जाँचें कि फ़ाइल वॉल्ट में खुलती है या दूसरी प्रति अपलोड करें।</string>
     <string name="analyzer_result_title">रिपोर्ट की व्याख्या</string>
-    <string name="analyzer_result_ai_label">यह AI द्वारा तैयार की गई व्याख्या है। नीचे दिए गए मान भी AI ने पहचाने हैं; उन्हें मूल PDF और निकाले गए टेक्स्ट से मिलाकर जाँचें।</string>
+    <string name="analyzer_read_analysis_aloud">पूरी रिपोर्ट का विश्लेषण आवाज़ में पढ़ें</string>
+    <string name="analyzer_result_ai_label">यह AI द्वारा तैयार की गई व्याख्या है। नीचे दिए गए मान भी AI ने पहचाने हैं; उन्हें मूल PDF से मिलाकर जाँचें।</string>
     <string name="analyzer_result_for">रिपोर्ट: %1$s</string>
     <string name="analyzer_open_original">मूल PDF खोलें</string>
     <string name="analyzer_text_truncated">सीमित प्रोसेसिंग के लिए लंबी PDF का केवल कुछ हिस्सा विश्लेषण के लिए भेजा गया। पूरी मूल रिपोर्ट भी जाँचें।</string>
@@ -292,9 +294,6 @@
     <string name="analyzer_test_value">मान: %1$s</string>
     <string name="analyzer_reference_range">रिपोर्ट में दी गई सामान्य सीमा: %1$s</string>
     <string name="analyzer_report_flag">मूल टेक्स्ट में दिया गया संकेत: %1$s</string>
-    <string name="analyzer_source_title">मूल PDF से निकाला गया टेक्स्ट</string>
-    <string name="analyzer_source_show">निकाला गया टेक्स्ट दिखाएँ</string>
-    <string name="analyzer_source_hide">निकाला गया टेक्स्ट छिपाएँ</string>
     <string name="analyzer_disclaimer_title">महत्वपूर्ण चिकित्सा सूचना</string>
     <string name="analyzer_disclaimer_body">AI से बनी व्याख्या केवल जानकारी के लिए है। यह चिकित्सा निदान नहीं है और पेशेवर चिकित्सा सलाह का विकल्प नहीं है। सभी मान और रेंज मूल रिपोर्ट से जाँचें तथा नतीजों पर योग्य स्वास्थ्य पेशेवर से चर्चा करें। इस व्याख्या के आधार पर दवाओं में बदलाव न करें।</string>
 

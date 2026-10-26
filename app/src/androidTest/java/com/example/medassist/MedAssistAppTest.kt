@@ -120,6 +120,19 @@ class MedAssistAppTest {
     }
 
     @Test
+    fun analyzerQuickAccess_thenHomeTabReturnsToHome() {
+        setMainShell(online = true)
+
+        composeRule.onNodeWithText(text(R.string.home_card_analyzer_title)).performClick()
+        composeRule.onNodeWithText(text(R.string.title_analyzer)).assertIsDisplayed()
+
+        composeRule.onNodeWithText(text(R.string.nav_home)).performClick()
+
+        composeRule.onNodeWithText(text(R.string.home_quick_access)).assertIsDisplayed()
+        composeRule.onNodeWithText(text(R.string.title_analyzer)).assertDoesNotExist()
+    }
+
+    @Test
     fun offlineBanner_showsOnlyWhenOffline() {
         setMainShell(online = false)
         composeRule.waitForIdle()

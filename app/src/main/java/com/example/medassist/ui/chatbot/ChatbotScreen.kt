@@ -71,6 +71,7 @@ import com.example.medassist.domain.assistant.AssistantConfig
 import com.example.medassist.ui.components.FormErrorBanner
 import com.example.medassist.ui.components.MedAssistTopBar
 import com.example.medassist.ui.components.OfflineBanner
+import com.example.medassist.ui.components.ReadAloudButton
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
@@ -311,6 +312,13 @@ private fun MessageBubble(message: ChatMessage, canRetry: Boolean, onRetry: () -
             )
             if (message.failed) {
                 TextButton(onClick = onRetry, enabled = canRetry) { Text(stringResource(R.string.chat_retry)) }
+            }
+            if (message.role == ChatRole.ASSISTANT) {
+                ReadAloudButton(
+                    text = message.text,
+                    contentDescription = stringResource(R.string.chat_read_response_aloud),
+                    testTag = "chat_read_aloud_${message.id}",
+                )
             }
         }
     }

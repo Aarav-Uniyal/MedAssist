@@ -233,6 +233,7 @@
     <string name="chat_input_label">Type your question</string>
     <string name="chat_send">Send</string>
     <string name="chat_speech_to_text">Speak your question</string>
+    <string name="chat_read_response_aloud">Read this assistant response aloud</string>
     <string name="chat_speech_prompt">Speak your question</string>
     <string name="chat_speech_unavailable">Speech recognition is not available on this device.</string>
     <string name="chat_speech_permission_denied">Microphone permission is needed for speech input.</string>
@@ -279,7 +280,8 @@
     <string name="analyzer_error_pdf_locked">This PDF is password-protected and could not be read. Use an unprotected copy and upload it to your Vault.</string>
     <string name="analyzer_error_pdf_unreadable">The PDF text could not be read. Check that the file opens in the Vault, or upload another copy.</string>
     <string name="analyzer_result_title">Report explanation</string>
-    <string name="analyzer_result_ai_label">This is an AI-generated explanation. The values listed below are also identified by AI; compare them with the original PDF and extracted text.</string>
+    <string name="analyzer_read_analysis_aloud">Read the full report analysis aloud</string>
+    <string name="analyzer_result_ai_label">This is an AI-generated explanation. The values listed below are also identified by AI; compare them with the original PDF.</string>
     <string name="analyzer_result_for">Report: %1$s</string>
     <string name="analyzer_open_original">Open original PDF</string>
     <string name="analyzer_text_truncated">Only part of this long PDF was sent for analysis to keep processing bounded. Check the complete original report too.</string>
@@ -295,9 +297,6 @@
     <string name="analyzer_test_value">Value: %1$s</string>
     <string name="analyzer_reference_range">Reference range shown: %1$s</string>
     <string name="analyzer_report_flag">Flag shown in source text: %1$s</string>
-    <string name="analyzer_source_title">Text extracted from the original PDF</string>
-    <string name="analyzer_source_show">Show extracted text</string>
-    <string name="analyzer_source_hide">Hide extracted text</string>
     <string name="analyzer_disclaimer_title">Important medical notice</string>
     <string name="analyzer_disclaimer_body">AI-generated explanation for informational purposes only. This is not a medical diagnosis and must not replace professional medical advice. Verify all values and ranges against the original report and discuss results with a qualified healthcare professional. Do not change medicines based on this explanation.</string>
 

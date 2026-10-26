@@ -44,8 +44,6 @@ enum class AnalyzerStage { DOWNLOADING, EXTRACTING, ANALYZING }
 
 data class AnalyzerDisplayResult(
     val analysis: ReportAnalysis,
-    /** In-memory only; it is not saved as a separate file or database record. */
-    val extractedSourceText: String,
     val totalPages: Int,
     val pagesRead: Int,
     val textTruncated: Boolean,
@@ -197,7 +195,6 @@ class ReportAnalyzerViewModel(
                                     work = AnalyzerWorkState.Completed(
                                         AnalyzerDisplayResult(
                                             analysis = result.analysis,
-                                            extractedSourceText = extracted.text,
                                             totalPages = extracted.totalPages,
                                             pagesRead = extracted.pagesRead,
                                             textTruncated = extracted.truncated,
