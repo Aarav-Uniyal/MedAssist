@@ -181,6 +181,10 @@ Before distributing a release build:
 
 See [`RELEASE_CHECKLIST.md`](RELEASE_CHECKLIST.md) for release procedures and [`TEST_RESULTS.md`](TEST_RESULTS.md) for the repository's recorded validation status.
 
+## AI Usage Disclosure
+
+ChatGPT was used to assist in refining the project concept and improving feature ideas. Claude was used to assist with writing portions of the code. These tools served as development aids, while the project’s implementation and final decisions remain the responsibility of the authors.
+
 ## Responsible use
 
 MedAssist is an educational project and is not a substitute for professional medical care. Always compare extracted or summarized values with the original report and discuss medical concerns with a qualified healthcare professional. Do not use the app to make urgent medical decisions or to start, stop, or change medication.
